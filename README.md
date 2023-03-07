@@ -13,7 +13,7 @@ models. The working group meets before the IAFSS conference currently held every
 
 ## Benchmark Cases
 
-### NIST Pool Fire
+### NIST Pool Fires
 ### FM Burner 
 
 
