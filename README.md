@@ -1,4 +1,4 @@
-# MaCFP - radi-db
+# radi-db
 Measurement and Computation of Radiative Heat Transfer Phenomena Database
 
 Welcome to the MaCFP database!
