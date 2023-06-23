@@ -16,25 +16,25 @@ Initial and mapped setups are listed in this directory.
 
 ### Field Names
 
-  Field             Type                       Field name for OPF
-  ----------------- -------------------------- --------------------
-  Nitrogen          Mass fraction              N2
-  Oxygen            Mass fraction              O2
-  Carbon dioxide    Mass fraction              CO2
-  Carbon monoxide   Mass fraction              CO
-  Ethylene          Mass fraction              C2H4
-  Water Vapor       Mass fraction              H2O
-  Soot              Mass fraction              Soot
-  Nitrogen          Volume fraction            N2_vol
-  Oxygen            Volume fraction            O2_vol
-  Carbon dioxide    Volume fraction            CO2_vol
-  Carbon monoxide   Volume fraction            CO_vol
-  Ethylene          Volume fraction            C2H4_vol
-  Water Vapor       Volume fraction            H2O_vol
-  Soot              Volume fraction            Soot_vol
-  Soot              Aerosol Volume fraction    fvSoot
-  Density           (warning: dimensionless)   rho
-  Temperature       (Kelvin)                   T
+| Field           | Type                     | Field name for OPF |
+|-----------------|--------------------------|--------------------|
+| Nitrogen        | Mass fraction            | N2                 |
+| Oxygen          | Mass fraction            | O2                 |
+| Carbon dioxide  | Mass fraction            | CO2                |
+| Carbon monoxide | Mass fraction            | CO                 |
+| Ethylene        | Mass fraction            | C2H4               |
+| Water Vapor     | Mass fraction            | H2O                |
+| Soot            | Mass fraction            | Soot               |
+| Nitrogen        | Volume fraction          | N2_vol             |
+| Oxygen          | Volume fraction          | O2_vol             |
+| Carbon dioxide  | Volume fraction          | CO2_vol            |
+| Carbon monoxide | Volume fraction          | CO_vol             |
+| Ethylene        | Volume fraction          | C2H4_vol           |
+| Water Vapor     | Volume fraction          | H2O_vol            |
+| Soot            | Volume fraction          | Soot_vol           |
+| Soot            | Aerosol Volume fraction  | fvSoot             |
+| Density         | (warning: dimensionless) | rho                |
+| Temperature     | (Kelvin)                 |                    |
 
 Comment: Pressure is not available in this list as it has minor impact
 on the final results (this was checked for time step 15).
