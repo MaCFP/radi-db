@@ -2,12 +2,27 @@
 Initial and mapped setups are listed in this directory.
 
 `FDS`: 
-  - initial FDS simulation with setup and csv simulation results
-  - binary files are not available in this folder
-  
-`OPF_mapped_snapshots`
+  - initial FDS simulation setup with csv simulation results
+  - binary files are not available at the moment
+
+`FDS_mapped`:
+- `CSVF` files of the snapshots for FDS simulations
+
+`OPF_Mapped_Snapshots`
   - all the mapped field files are available in a release with compressed openfoam files; please click here to download the relevant time steps.
-  - Link to data files for the release with each snapshot: https://github.com/MaCFP/radi-db/releases/tag/FM_SimBase_v0.0.1
+  - Link to data files for the release with each snapshot:
+  
+  https://github.com/MaCFP/radi-db/releases/tag/FM_SimBase_v0.0.1
+
+Please use the scripts in the current `OpenFOAM_mapped_Snapshots` folder for downloading all files automatically.
+
+```00_download_files.sh```
+
+With the other two scripts you have a starting point to prepare OpenFOAM cases to start the evaluation. There are at the moment two options:
+
+```01_createCaseFolder_separate.sh```
+
+```02_createCaseFolder_combined.sh```
 
 
 
