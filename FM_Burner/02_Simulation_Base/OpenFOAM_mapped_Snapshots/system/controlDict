@@ -1,0 +1,55 @@
+
+    /*--------------------------------*- C++ -*----------------------------------*    | =========                 |                                                 |
+    | \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+    |  \    /   O peration     | Version:  v2006                                 |
+    |   \  /    A nd           | Website:  www.openfoam.com                      |
+    |    \/     M anipulation  |                                                 |
+    \*---------------------------------------------------------------------------*/
+    FoamFile
+    {
+        version     2.0;
+        format      ascii;
+        class       dictionary;
+        location    "system";
+        object      controlDict;
+    }
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+    
+    application     simpleFoam;
+    
+    startTime 0;
+    // startFrom       startTime;
+    startFrom       latestTime;
+    
+    
+    endTime         2000;
+    // endTime 5.0;
+    stopAt          endTime;
+    // stopAt          writeNow;
+    
+    deltaT          1;
+    
+    writeControl    timeStep;
+    
+    writeInterval   1;
+    
+    purgeWrite      0;
+    
+    writeFormat     ascii;
+    
+    writePrecision  12;
+    
+    writeCompression on;
+    
+    timeFormat      general;
+    
+    timePrecision   12;
+    
+    runTimeModifiable true;
+
+    functions
+    {
+    #include "post_FunctionsObjects_Dict"
+    }
+
+    
