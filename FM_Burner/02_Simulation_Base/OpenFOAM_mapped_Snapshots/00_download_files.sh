@@ -1,17 +1,13 @@
+# ------------------------------------------------------------------------------
 # Select files to download from this release:
-
 baseLink="https://github.com/MaCFP/radi-db/releases/download/FM_SimBase_v0.0.1/"
 
-# wget ${baseLink}01_createCaseFolder_separate.sh
-# wget ${baseLink}02_createCaseFolder_combined.sh
-
+# ------------------------------------------------------------------------------
 # Constant (Mesh) and system folder
-wget ${baseLink}constant_system.tar
+wget ${baseLink}constant_polyMesh.tar.gz
 
-
+# ------------------------------------------------------------------------------
 # Time folder
-
-
 wget ${baseLink}5.00009.tar
 wget ${baseLink}10.0001.tar
 wget ${baseLink}15.0004.tar
