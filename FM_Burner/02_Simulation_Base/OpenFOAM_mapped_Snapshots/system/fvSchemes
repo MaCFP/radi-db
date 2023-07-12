@@ -36,19 +36,19 @@ divSchemes
     {
         O2              limitedLinear 0.25;
         N2              limitedLinear 0.25;
-        CH4             limitedLinear 0.25;
         C2H4            limitedLinear 0.25;
-        C3H8            limitedLinear 0.25;
-        CORRUGATED      limitedLinear 0.25;
-        CH2O            limitedLinear 0.25;
         H2O             limitedLinear 0.25;
         CO2             limitedLinear 0.25;
         h               limitedLinear 0.5;
+        CO               limitedLinear 0.5;
+        // CH4             limitedLinear 0.25;
+        // C3H8            limitedLinear 0.25;
+        // CORRUGATED      limitedLinear 0.25;
+        // CH2O            limitedLinear 0.25;
     };
 
     div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
     div(phiU,p)     Gauss linear;
-    //div(Ji,Ii_h)    Gauss upwind;
     div(Ji,Ii_h)    Gauss linearUpwind grad(Ii_h);
 
 }

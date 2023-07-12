@@ -24,8 +24,8 @@
     
     endTime         2000;
     // endTime 5.0;
-    stopAt          endTime;
-    // stopAt          writeNow;
+    // stopAt          endTime;
+    stopAt          writeNow;
     
     deltaT          1;
     

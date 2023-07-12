@@ -1,4 +1,3 @@
-#include "../system/case.setup"
 species
 (
     O2
@@ -6,16 +5,14 @@ species
     C2H4
     CO2
     N2
+    CO
 );
-//    CO
 
 reactions
 {
     methaneReaction
     {
         type         irreversibleinfiniteReaction;
-        // reaction     "C2H4 + 3O2 + 11.286N2 = 2CO2 + 2H2O + 11.286N2";
-        // reaction     "CH4 + 2O2 + 7.5N2 = CO2 + 2H2O + 7.5N2";
-        reaction     $reactionDef;
+        reaction "C2H4 + 3O2 + 11.286N2 = 2CO2 + 2H2O + 11.286N2";
     }
 }
