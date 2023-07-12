@@ -1,20 +1,15 @@
+# ------------------------------------------------------------------------------
 # Select files to download from this release:
-
-# baseLink="https://github.com/MaCFP/radi-db/releases/download/FM_SimBase_v0.0.1/"
 baseLink="https://github.com/MaCFP/radi-db/releases/download/NIST_Pool_SimBase_v0.0.1/"
 
-# wget ${baseLink}01_createCaseFolder_separate.sh
-# wget ${baseLink}02_createCaseFolder_combined.sh
 
-# Constant (Mesh) and system folder
-wget ${baseLink}constant.tar.gz
-wget ${baseLink}system.tar.gz
-# wget ${baseLink}constant_system.tar
+# ------------------------------------------------------------------------------
+# Constant (Mesh) folder
+wget ${baseLink}constant_polyMesh.tar.gz
 
 
+# ------------------------------------------------------------------------------
 # Time folder
-
-
 wget ${baseLink}37.tar.gz
 wget ${baseLink}37.6.tar.gz
 wget ${baseLink}37.12.tar.gz
