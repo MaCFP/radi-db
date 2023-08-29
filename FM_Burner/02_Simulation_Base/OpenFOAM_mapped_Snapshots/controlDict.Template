@@ -1,0 +1,478 @@
+/*--------------------------------*- C++ -*----------------------------------*    | =========                 |                                                 |
+  | \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+  |  \    /   O peration     | Version:  v2006                                 |
+  |   \  /    A nd           | Website:  www.openfoam.com                      |
+  |    \/     M anipulation  |                                                 |
+  \*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     simpleFoam;
+
+startTime 0;
+
+startFrom       latestTime;
+
+endTime         endTime_Val;
+
+stopAt          endTime;
+
+deltaT          0.0000001;
+
+writeControl    timeStep;
+
+writeInterval   1;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  12;
+
+writeCompression on;
+
+timeFormat      general;
+
+timePrecision   12;
+
+runTimeModifiable true;
+
+functions
+{
+    writeObjects1.writeObjects
+    {
+        type        writeObjects;
+        libs        (utilityFunctionObjects);
+        objects     (a);
+        timeStart       0.0;
+        timeEnd         1000;
+        executeControl  timeStep;
+        executeInterval 1;
+        writeControl    timeStep;
+        writeInterval   1;
+        outputInterval 1;
+    }
+
+    wall_Line_x06_y0_z_0_83__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+        writeInterval  1;
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (0.6 0 0);
+                end (0.6 0 0.83);
+                nPoints 1000;
+            } );
+        fields (qin qr);
+    }
+
+    wall_Line_x06_y0_z_0_83__cellPatchConstrained.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPatchConstrained;
+        outputInterval 1; 
+        writeInterval  1;
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (0.6 0 0);
+                end (0.6 0 0.83);
+                nPoints 1000;
+            } );
+        fields (qin qr);
+    }
+
+    wall_Line_x06_y0_z_0_83__cell.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cell;
+        outputInterval 1; 
+        writeInterval  1;
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (0.6 0 0);
+                end (0.6 0 0.83);
+                nPoints 1000;
+            } );
+        fields (qin qr);
+    }
+    wall_Line_x06_y_n06_06_z_3__cellPatchConstrained.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPatchConstrained;
+        outputInterval 1; 
+        writeInterval  1;
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis y;
+                start (0.6 -0.6 3);
+                end (0.6 0.6 0.3);
+                nPoints 1000;
+            } );
+        fields (qin qr);
+    }
+    wall_Line_x06_y_n06_06_z_3__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+        writeInterval  1;
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis y;
+                start (0.6 -0.6 3);
+                end (0.6 0.6 0.3);
+                nPoints 1000;
+            } );
+        fields (qin qr);
+    }
+
+    vertLine_x0_y_0_z_0_83__cell.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cell;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (0.0 0 0);
+                end (0.0 0 0.83);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_1524_1D__cell.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cell;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.1524);
+                end (0.6 0 0.1524);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_2286_15D__cell.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cell;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.2286);
+                end (0.6 0 0.2286);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_3048_2D__cell.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cell;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.3048);
+                end (0.6 0 0.3048);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_3810_25D__cell.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cell;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.381);
+                end (0.6 0 0.381);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+
+    horizLine_x_n06_06_y_0_z_4572_3D__cell.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cell;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.4572);
+                end (0.6 0 0.4572);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_5334_35D__cell.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cell;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.5334);
+                end (0.6 0 0.5334);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+
+    vertLine_x0_y_0_z_0_83__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (0.0 0 0);
+                end (0.0 0 0.83);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_1524_1D__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.1524);
+                end (0.6 0 0.1524);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_2286_15D__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.2286);
+                end (0.6 0 0.2286);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_3048_2D__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.3048);
+                end (0.6 0 0.3048);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_3810_25D__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.381);
+                end (0.6 0 0.381);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+
+    horizLine_x_n06_06_y_0_z_4572_3D__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.4572);
+                end (0.6 0 0.4572);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+    horizLine_x_n06_06_y_0_z_5334_35D__cellPoint.sets
+    {
+        type sets;
+        libs (sampling);
+        writeControl timeStep;
+        interpolationScheme cellPoint;
+        outputInterval 1; 
+
+        writeInterval  1;
+
+        setFormat   csv;
+        sets (
+            data
+            {
+                type uniform;
+                axis z;
+                start (-0.6 0 0.5334);
+                end (0.6 0 0.5334);
+                nPoints 1000;
+            } );
+        fields (a G T);
+    }
+
+}
