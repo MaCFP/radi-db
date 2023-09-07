@@ -1,0 +1,40 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      sootProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+sootModel noSoot;
+
+doSootFeedBack   false;
+diffusionOn      true;
+
+sootSolverType
+{
+    solver          odeSoot;
+}
+
+
+odeCoeffs
+{
+    solver          seulex; // Rosenbrock34;
+    absTol          1.0e-14;
+    relTol          1.0e-04;
+}
+
+noSootCoeffs
+{
+}
+
+// ************************************************************************* //

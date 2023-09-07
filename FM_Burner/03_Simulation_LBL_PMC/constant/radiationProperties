@@ -1,0 +1,294 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      radiationProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+radiation on;
+postProcessingMode true;
+
+//RTE solver
+radiationModel  PMC; //fvDOM  
+
+
+//---------------------------------------------------------------
+//-------------------------RTESOlvers----------------------------
+//---------------------------------------------------------------
+
+includeSoot   true;
+
+
+//PMC
+//-----
+
+PMCCoeffs
+{
+    minEmissCellTemp 200.0; 
+    minEmissWallTemp 200.0; 
+    nwvPerRay 1;
+    nrayPerCell 100; //100;
+    nrayPerParticle 1;
+    includeWallEmission on;
+    subModels
+    {
+	absorptionModel cellAbsorption;	
+        patchInteractionModel PMCPatchInteraction;
+        Report PMCReport;
+
+	cellAbsorptionCoeffs
+	{
+
+	}	
+
+	PMCPatchInteractionCoeffs
+	{
+
+	}	
+
+	PMCReportCoeffs
+	{
+		patchNamesForAbsSourceAnalysis 1("WW_block_cylinder_burner");
+		pointsForCellRayTracingOutput 0();
+                bandsForRadFields 5(
+                                        2(200 2075) // H2O band
+                                        2(2075 2400) // CO2 band
+                                        2(2400 3150) // unimportant band
+                                        2(3150 4050) // CO2 + H2O band
+                                        2(4050 30000) // soot
+                                   );
+	
+	}	
+    }
+
+}
+
+
+//FVDOM
+//-------
+
+fvDOMCoeffs
+{
+    nPhi        2;      // azimuthal angles in PI/2 on X-Y.(from Y to X)
+    nTheta      2;      // polar angles in PI (from Z to X-Y plane)
+    tolerance   1e-1;   // convergence tolerance for radiation iteration
+    maxIter     1;      // maximum number of iterations
+}
+
+//---------------------------------------------------------------
+//-----------------------Spectral Models-------------------------
+//---------------------------------------------------------------
+spectralModel RNDLBLField;
+RNDLBLModel HITEMP; // Gas spectral model
+
+//spectralModel GrayField;
+//grayModel planckMean; // Gas spectral model
+
+//spectralModel kDistField;
+//kdistModel fskTable;  // Gas spectral model
+
+
+// Soot spectral model
+// Only requites for LBLField and KdistField-corrTables spectral model. 
+// For GrayField and RNDLBLField, spectral model the Fortran side 
+// autometically add soot contribution (changCharalampopoulos)  based on "includeSoot" attribute.
+sootSpectralModel noSootSpectralModel; // changCharalampopoulos;  
+
+Write on; // Write Spectral field related variable.
+ignoreSpecies 2(CH4 C2H4);
+
+
+planckMeanCoeffs
+{
+   planckMeandbPath  "~/radiationDatabase/kpDB/";
+}
+
+fskTableCoeffs
+{
+
+}
+
+HITEMPCoeffs
+{
+   lbldbPath  "~/radiationDatabase/LBL_pressures/";
+   planckMeandbPath  "~/radiationDatabase/kpDB/";
+   pressureList  "1,10,20";
+   //pressureList  "10,20,30,40,45,50,60,70,80";
+   //pressureList  "1";
+}
+
+
+
+//---------------------------------------------------------------
+//--------------------OpenFOAM default implementation------------
+//---------------------------------------------------------------
+
+solverFreq 1; // Number of flow iterations per radiation iteration
+absorptionEmissionModel greyMean; //greyMeanCombustion;
+
+constantCoeffs
+{
+    absorptivity    0.01;
+    emissivity      0.01;
+    E               0;
+}
+
+//greyMeanCombustionCoeffs
+greyMeanCoeffs
+{
+    lookUpTableFileName      none;
+
+    EhrrCoeff                0.0;
+
+    CO2
+    {
+        Tcommon         200;   // Common Temp
+        invTemp         true;   // Is the polynomio using inverse temperature.
+        Tlow            200;   // Low Temp
+        Thigh           2500;  // High Temp
+
+        loTcoeffs       // coefss for T < Tcommon
+        (
+            0           //  a0            +
+            0           //  a1*T          +
+            0           //  a2*T^(+/-)2   +
+            0           //  a3*T^(+/-)3   +
+            0           //  a4*T^(+/-)4   +
+            0           //  a5*T^(+/-)5   +
+        );
+        hiTcoeffs        // coefss for T > Tcommon
+        (
+            18.741
+            -121.31e3
+            273.5e6
+            -194.05e9
+            56.31e12
+            -5.8169e15
+        );
+
+    }
+
+    H2O
+    {
+        Tcommon         200;
+        invTemp         true;
+        Tlow            200;
+        Thigh           2500;
+
+        loTcoeffs
+        (
+            0
+            0
+            0
+            0
+            0
+            0
+        );
+        hiTcoeffs
+        (
+            -0.23093
+            -1.12390e3
+             9.4153e6
+            -2.99885e9
+             0.51382e12
+            -1.868e10
+        );
+    }
+
+    C2H4 //CH4
+    {
+        Tcommon         200;
+        Tlow            200;
+        Thigh           2500;
+        invTemp         false;
+
+        loTcoeffs
+        (
+            0
+            0
+            0
+            0
+            0
+            0
+        );
+        hiTcoeffs
+        (
+            6.6334
+            -0.0035686
+            1.6682e-8
+            2.5611e-10
+            -2.6558e-14
+            0
+        );
+    }
+
+    O2
+    {
+        Tcommon         200;
+        invTemp         true;
+        Tlow            200;
+        Thigh           2500;
+
+        loTcoeffs
+        (
+            0
+            0
+            0
+            0
+            0
+            0
+        );
+        hiTcoeffs
+        (
+            0.1
+            0
+            0
+            0
+            0
+            0
+        );
+    }
+
+
+    N2
+    {
+        Tcommon         200;
+        invTemp         true;
+        Tlow            200;
+        Thigh           2500;
+
+        loTcoeffs
+        (
+            0
+            0
+            0
+            0
+            0
+            0
+        );
+        hiTcoeffs
+        (
+            0.1
+            0
+            0
+            0
+            0
+            0
+        );
+    }
+}
+scatterModel    none;
+sootModel       none;
+
+// ************************************************************************* //

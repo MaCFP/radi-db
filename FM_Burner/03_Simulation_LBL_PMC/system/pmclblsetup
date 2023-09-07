@@ -1,0 +1,150 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  | =========                 |                                                 |
+  | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+  |  \\    /   O peration     | Version:  v2006                                 |
+  |   \\  /    A nd           | Website:  www.openfoam.com                      |
+  |    \\/     M anipulation  |                                                 |
+  \*---------------------------------------------------------------------------*/
+FoamFile
+{
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  location    "system";
+  object      case.setup;
+}
+
+
+internalField_U uniform (0 0 0);
+internalField_T uniform 300.0;
+internalField_p uniform 101325;
+internalField_k uniform 1e-4;
+
+internalField_O2 uniform 0.23301;
+internalField_N2 uniform 0.76699;
+internalField_O2_no 0.23301;
+internalField_N2_no 0.76699;
+
+internalField_CH4 uniform 0;
+internalField_C2H4 uniform 0; //Ethen/Ethylen
+internalField_Ydefault uniform 0;
+internalField_soot uniform 0;
+internalField_p_rgh uniform 0;
+internalField_ph_rgh uniform 0;
+internalField_nut uniform 0;
+internalField_alphat uniform 0;
+
+
+
+
+
+boundaryField
+{
+  U
+    {
+      ".*.*"
+        {
+          type            fixedValue;
+          value           uniform (0 0 0);
+        }
+    }
+  Ydefault
+    {
+      ".*.*"
+        {
+          type            zeroGradient;
+        }
+    }
+  emissivity
+    {
+      ".*.*"
+        {
+          type            fixedValue;
+          value           uniform 1;
+        }
+    }
+  fvSoot
+    {
+      ".*.*"
+        {
+          type            fixedValue;
+          value           uniform 0;
+        }
+    }
+  Ysoot
+    {
+      ".*.*"
+        {
+          type            fixedValue;
+          value           uniform 0;
+        }
+    }
+  Nsoot
+    {
+      ".*.*"
+        {
+          type            fixedValue;
+          value           uniform 0;
+        }
+    }
+
+}
+
+
+DefaultPMC
+{
+    boundaryField
+    {
+        U
+        {
+              ".*.*"
+              {
+                type            fixedValue;
+                value           uniform (0 0 0);
+              }
+        }
+        Ydefault
+        {
+            ".*.*"
+            {
+                type            zeroGradient;
+            }
+
+        }
+        emissivity
+        {
+            ".*.*"
+            {
+               type            fixedValue;
+               value           uniform 1;
+            }
+        }
+        fvSoot
+        {
+            ".*.*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+        }
+        Ysoot
+        {
+            ".*.*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+        }
+        Nsoot
+        {
+            ".*.*"
+            {
+                type            fixedValue;
+                value           uniform 0;
+            }
+        }
+
+
+
+    }
+}
