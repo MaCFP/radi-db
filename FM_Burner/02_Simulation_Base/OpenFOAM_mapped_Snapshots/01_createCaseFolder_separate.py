@@ -14,6 +14,7 @@ def createDir(newDir):
             pass
 
 # ==============================================================================
+os.chdir("./Release/")
 tarL = glob.glob("*.tar")
 # print(tarL)
 
@@ -40,9 +41,9 @@ print("")
 print ("Copying - constant, polyMesh and system directories...")
 for case in caseL:
     # print(case)
-    shutil.copytree("constant",case + "/constant", dirs_exist_ok=True)
+    shutil.copytree("../constant",case + "/constant", dirs_exist_ok=True)
     shutil.copytree("constant_polyMesh/polyMesh",case + "/constant/polyMesh", dirs_exist_ok=True)
-    shutil.copytree("system",case + "/system", dirs_exist_ok=True)
+    shutil.copytree("../system",case + "/system", dirs_exist_ok=True)
 
 
 

@@ -3,6 +3,9 @@
 baseLink="https://github.com/MaCFP/radi-db/releases/download/FM_SimBase_v0.0.1/"
 
 # ------------------------------------------------------------------------------
+cd Release
+
+# ------------------------------------------------------------------------------
 # Constant (Mesh) and system folder
 wget ${baseLink}constant_polyMesh.tar
 
