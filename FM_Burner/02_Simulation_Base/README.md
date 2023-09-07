@@ -5,7 +5,7 @@ Initial and mapped setups are listed in this directory.
   - initial FDS simulation setup with csv simulation results
   - binary files are not available at the moment
 
-`FDS_mapped`:
+`FDS_mapped_Snapshots`:
 - `CSVF` files of the snapshots for FDS simulations
 
 `OPF_Mapped_Snapshots`
