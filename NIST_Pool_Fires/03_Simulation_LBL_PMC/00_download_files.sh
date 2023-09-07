@@ -1,15 +1,21 @@
+# ------------------------------------------------------------------------------
 # Select files to download from this release:
-
 baseLink="https://github.com/MaCFP/radi-db/releases/download/NIST_Pool_LBL_PMC_v0.0.1/"
 
+# ------------------------------------------------------------------------------
+mkdir Release
+cd Release
 
+# ------------------------------------------------------------------------------
 # Constant (Mesh) and system folder
 wget ${baseLink}constant.tar.gz
 wget ${baseLink}system.tar.gz
 
 
+# ------------------------------------------------------------------------------
 wget ${baseLink}SpectralRad.tar.gz
 
+# ------------------------------------------------------------------------------
 # Time folder
 wget ${baseLink}37.tar.gz
 wget ${baseLink}37.6.tar.gz

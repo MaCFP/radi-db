@@ -2,6 +2,9 @@
 # Select files to download from this release:
 baseLink="https://github.com/MaCFP/radi-db/releases/download/NIST_Pool_SimBase_v0.0.1/"
 
+# ------------------------------------------------------------------------------
+mkdir Release
+cd Release
 
 # ------------------------------------------------------------------------------
 # Constant (Mesh) folder

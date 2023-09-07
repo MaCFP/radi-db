@@ -1,11 +1,11 @@
 
 # Overview
 
-For this case, there is no mapping involved. So the relevant folder is just called `OpenFOAM`.
+For this case, there is _no mapping_ involved. So the relevant folder is just called `OpenFOAM`.
 This folder includes scripts to download the openFOAM data automatically from the release
 
 `OpenFOAM_Snapshots`
-  - all the mapped field files are available in a release with compressed openfoam files; please click here to download the relevant time steps.
+  - all the field files are available in a release with compressed openfoam files; please click here to download the relevant time steps.
   - Link to data files for the release with each snapshot:
   
 https://github.com/MaCFP/radi-db/releases/tag/NIST_Pool_SimBase_v0.0.1
