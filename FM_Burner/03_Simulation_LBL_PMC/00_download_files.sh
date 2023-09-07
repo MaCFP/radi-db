@@ -1,13 +1,17 @@
 # Select files to download from this release:
 baseLink="https://github.com/MaCFP/radi-db/releases/download/FM_LBL_PMC_v0.0.1/"
 
+# ------------------------------------------------------------------------------
+mkdir Release
 cd Release
 
+# ------------------------------------------------------------------------------
 # Constant (Mesh) 
 wget ${baseLink}constant_polyMesh.tar.gz
 wget ${baseLink}SpectralRad.tar.gz
 
 
+# ------------------------------------------------------------------------------
 # Time folder
 wget ${baseLink}5.00009.tar.gz
 wget ${baseLink}10.0001.tar.gz
