@@ -20,3 +20,5 @@ With the other two scripts you have a starting point to prepare OpenFOAM cases t
 
 ```02_createCaseFolder_combined.sh```
 
+
+`Info`: FDS mapping data is not available. 
