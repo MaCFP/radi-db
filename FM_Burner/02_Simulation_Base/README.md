@@ -54,7 +54,7 @@ With the other two scripts you have a starting point to prepare OpenFOAM cases t
 Comment: Pressure is not available in this list as it has minor impact
 on the final results (this was checked for time step 15).
 
-# Molar weights from FDS
+## Molar weights from FDS
 
 ETHYLENE Gas Species Molecular Weight (g/mol) 28.05316
 

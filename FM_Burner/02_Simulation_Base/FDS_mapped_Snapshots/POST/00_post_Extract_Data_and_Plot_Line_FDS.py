@@ -35,8 +35,7 @@ postDir0 = "./DataFiles/"
 createDir(postDir0)
 
 # ==============================================================================
-# rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/FDS_mapped_Snapshots/xxx_Release_xxx/"
-rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/FDS_mapped_Snapshots/Release/"
+rootDir = "../Release/"
 
 caseL = glob.glob(rootDir+"/Case_Time_*")
 print(caseL)
@@ -73,7 +72,7 @@ for n, case in enumerate(caseL):
         colN = df.columns[0]
         print(colN)
         if "RHF" in colN:
-            print("exti")
+            # print("exit")
             print (colN)
             df = df * 1000.0
             # exit()
