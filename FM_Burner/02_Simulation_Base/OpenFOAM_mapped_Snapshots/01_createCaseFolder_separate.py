@@ -15,14 +15,14 @@ def createDir(newDir):
 
 # ==============================================================================
 os.chdir("./Release/")
-tarL = glob.glob("*.tar")
+tarL = glob.glob("*.tar.gz")
 # print(tarL)
 
 # ------------------------------------------------------------------------------
 for i, tar in enumerate(tarL):
     print(100*"=")
     print(tar)
-    timeStep=tar.split(".tar")[0]
+    timeStep=tar.split(".tar.gz")[0]
     ftar = tarfile.open(tar)
     ftar.extractall('./')
     ftar.close()
