@@ -28,8 +28,9 @@ def createDir(dirName):
 # rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/OpenFOAM_mapped_Snapshots/misc/v_Case_Time_85/postProcessing/"
 # rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/OpenFOAM_mapped_Snapshots/Release/Cases/"
 # rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/OpenFOAM_mapped_Snapshots/misc/"
-rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/03_Simulation_LBL_PMC/xxx_Release_xxx/"
-rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/03_Simulation_LBL_PMC/Release/"
+# rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/03_Simulation_LBL_PMC/xxx_Release_xxx/"
+# rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/03_Simulation_LBL_PMC/Release/"
+rootDir = "../Release/"
 
 # caseL = glob.glob(rootDir+"/v_Case_Time_*")
 caseL = glob.glob(rootDir+"/Case_Time_*")

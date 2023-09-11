@@ -8,17 +8,24 @@ import matplotlib.pyplot as plt
 # ..............................................................................
 import glob
 import os
+# ==============================================================================
+def createDir(dirName):
+    if not(os.path.isdir(dirName)):
+        try:
+            os.makedirs(dirName)
+        except OSError as e:
+            if e.errno != 17:
+                raise
+            pass
 
-# src = '/home/ihritik/file.txt'
-# dst = '/home/ihritik/Desktop/file(symlink).txt'
-# os.symlink(src, dst)
-  
-# print("Symbolic link created successfully")
 
+# ==============================================================================
+
+# timeL = ["5.00009","10.0001","15.0004","20.0003"]
+# timeL = ["5.00009","10.0001"]
 timeL = ["5.00009","10.0001","15.0004","20.0003","25.0001","30.0002","35.0002","40.0001","45.0004","50.0005","55.0001","60.0005","65.0001","70.0004","75.0002","80.0003","85","90.0005","95.0002","100","105","110","115.001","120","125","130","135","140","145","150","155","160","165","170","175","180","185","190","195","200"]
-timeL = ["5.00009","10.0001","15.0004","20.0003"]
-timeL = ["5.00009","10.0001"]
 
+# ------------------------------------------------------------------------------
 calcL = ["FDS_1","OPF_1","PMC_LBL"]
 calcAvgNameL = ["FDS_1_Avg","OPF_1_Avg","PMC_LBL_Avg"]
 
@@ -26,9 +33,12 @@ tool_prefixL = ["FDS","OPF","PMC_LBL"]
 
 time_prefix = "Case_Time_"
 
-# dataDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/FDS_mapped_Snapshots/POST/LinePlots/"
 dataDir = "./DataFiles/"
 
+for avgCase in calcAvgNameL:
+    createDir(dataDir+avgCase)
+
+# ==============================================================================
 
 dfz = pd.read_csv("Mapping_Fields.csv")
 # ...................................................................................
