@@ -29,6 +29,7 @@ rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/0
 rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/OpenFOAM_mapped_Snapshots/Release/Cases/"
 rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/OpenFOAM_mapped_Snapshots/misc/"
 rootDir = "/Volumes/PortableSSD/00_MaCFP/RAD_Subgroup/01_radi-db.git/FM_Burner/02_Simulation_Base/OpenFOAM_mapped_Snapshots/Release/"
+rootDir = "../Release/"
 
 caseL = glob.glob(rootDir+"/Case_Time_*")
 # caseL = glob.glob(rootDir+"/v_Case_Time_*")
