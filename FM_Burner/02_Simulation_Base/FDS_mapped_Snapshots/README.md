@@ -1,7 +1,8 @@
 # Overview
 
-The general idea to evaluate the settings and compare FDS and OpenFOAM data with the PMC-LBL benchmark is basically The process i
+The general idea to evaluate the settings and compare FDS and OpenFOAM data with the PMC-LBL benchmark.
 
+An detailed description how to run and post-process the snapshots is given in the [Readme](/FM_Burner/README.md).
 
 # Further information
 

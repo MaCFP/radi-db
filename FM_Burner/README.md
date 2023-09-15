@@ -3,6 +3,13 @@
 
 General overview about the folder structure is described in the main `README.md` file.
 
+## Important
+
+As stated before, the calculations with `FDS` need an installation of at lest this version 
+ `Revision         : FDS-6.8.0-138-g51097e3-nightly`.
+ 
+ Similar for `OpenFOAM`, the approach is adjusted for `OpenFOAM-v2212`. Other versions should be possible as well; some minor adjustments of the so called `functionObjects` are probably needed (this is not tested in detail).
+
 ## Experimental data
 
 The main directory for the FM-Burner is in the `macfp-db` project:
