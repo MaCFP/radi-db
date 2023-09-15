@@ -1,14 +1,21 @@
 # Overview
 Initial and mapped setups are listed in this directory.
 
-`FDS`: 
-  - initial FDS simulation setup with csv simulation results
-  - binary files are not available at the moment
 
-`FDS_mapped_Snapshots`:
-- `CSVF` files of the snapshots for FDS simulations
+## `FDS`: 
+- initial FDS simulation setup with csv simulation results
+- binary files are not available at the moment
 
-`OPF_Mapped_Snapshots`
+Here only the setup is very shortly described; no calculation files are available.
+
+
+## `FDS_mapped_Snapshots`:
+- `CSVF` files approach for calculating the snapshots with FDS
+
+The general steps are described already in the [Readme](/FM_Burner/README.md) ; please check there again for the details and a step by step description.
+
+
+## `OPF_Mapped_Snapshots`
   - all the mapped field files are available in a release with compressed openfoam files; please click here to download the relevant time steps.
   - Link to data files for the release with each snapshot:
   
@@ -18,11 +25,8 @@ Please use the scripts in the current `OpenFOAM_mapped_Snapshots` folder for dow
 
 ```00_download_files.sh```
 
-With the other two scripts you have a starting point to prepare OpenFOAM cases to start the evaluation. There are at the moment two options:
+The general steps are described already in the [Readme](/FM_Burner/README.md) ; please check there again for the details and a step by step description.
 
-```01_createCaseFolder_separate.sh```
-
-```02_createCaseFolder_combined.sh```
 
 
 
@@ -54,18 +58,13 @@ With the other two scripts you have a starting point to prepare OpenFOAM cases t
 Comment: Pressure is not available in this list as it has minor impact
 on the final results (this was checked for time step 15).
 
-## Molar weights from FDS
+### Molar weights from FDS
 
-ETHYLENE Gas Species Molecular Weight (g/mol) 28.05316
-
-NITROGEN Gas Species Molecular Weight (g/mol) 28.01340
-
-OXYGEN Gas Species Molecular Weight (g/mol) 31.99880
-
-CARBON DIOXIDE Gas Species Molecular Weight (g/mol) 44.00950
-
-WATER VAPOR Gas Species Molecular Weight (g/mol) 18.01528
-
-CARBON MONOXIDE Gas Species Molecular Weight (g/mol) 28.01010
-
-SOOT Gas Species Molecular Weight (g/mol) 10.91042
+The molecular weights used in FDS are listed here mainly for general information purposes:
+- ETHYLENE Gas Species Molecular Weight (g/mol) 28.05316
+- NITROGEN Gas Species Molecular Weight (g/mol) 28.01340
+- OXYGEN Gas Species Molecular Weight (g/mol) 31.99880
+- CARBON DIOXIDE Gas Species Molecular Weight (g/mol) 44.00950
+- WATER VAPOR Gas Species Molecular Weight (g/mol) 18.01528
+- CARBON MONOXIDE Gas Species Molecular Weight (g/mol) 28.01010
+- SOOT Gas Species Molecular Weight (g/mol) 10.91042
