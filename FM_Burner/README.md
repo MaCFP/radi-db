@@ -80,11 +80,11 @@ These two description do not yet described how to compare the final results. Thi
  
    `python 03_run_FDS.py <path_to_fds_bin/fds_something`
  
-    Obviously, the settings within the
-    `v0_FM_15cm_Burner_C2H4_20p9_5mm.fds` file can be adjusted as it
-    is needed before the simulation. Though keep in mind that the
-    defined devices are set and named like this to be able to compare
-    results with the other OpenFOAM results.
+   Obviously, the settings within the
+   `v0_FM_15cm_Burner_C2H4_20p9_5mm.fds` file can be adjusted as it
+   is needed before the simulation. Though keep in mind that the
+   defined devices are set and named like this to be able to compare
+   results with the other OpenFOAM results.
 
    The primary ideas is to be able to adjust special radiation solver
    settings and evaluate its impact for each snapshot.
@@ -192,15 +192,15 @@ These two description do not yet described how to compare the final results. Thi
  
    `python 04_run_OPF.py`
  
-    Obviously, the settings within the `system` and `constant` files
-    can should be adjusted as it is needed before the simulation.
+   Obviously, the settings within the `system` and `constant` files
+   can should be adjusted as it is needed before the simulation.
 
-    By default, the script assumes, that your
-    `OpenFOAM`-`fireRadFoam_MaCFP` installation is accessable (in your
-    `PATH`) with the name `fireRadFoam_MaCFP`; if this is not the case
-    try to run the simulation via:
+   By default, the script assumes, that your
+   `OpenFOAM`-`fireRadFoam_MaCFP` installation is accessable (in your
+   `PATH`) with the name `fireRadFoam_MaCFP`; if this is not the case
+   try to run the simulation via:
  
-    `python 04_run_OPF.py <complete_path_to_OpenFOAM_user_bin/fireRadFoam_MaCFP`
+   `python 04_run_OPF.py <complete_path_to_OpenFOAM_user_bin/fireRadFoam_MaCFP`
 
 
 ### 6. Post-Processing of all Snapshots 
@@ -297,9 +297,10 @@ These two description do not yet described how to compare the final results. Thi
    
    `python 03_run_OPF_postProcess.py`
    
-    Here, the settings within the `system` and `constant` files should
-    not be adjusted as the data is only post-process; any adjustment
-    would not have any impact on the results.
+
+   Here, the settings within the `system` and `constant` files should
+   not be adjusted as the data is only post-process; any adjustment
+   would not have any impact on the results.
 
 
 
