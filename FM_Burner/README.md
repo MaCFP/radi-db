@@ -6,7 +6,7 @@ General overview about the folder structure is described in the main `README.md`
 ## Important
 
 As stated before, the calculations with `FDS` need an installation of at least this version 
- `Revision         : FDS-6.8.0-138-g51097e3-nightly`.
+ `FDS-6.8.0-138-g51097e3-nightly`.
  
  Similar for `OpenFOAM`, the approach is adjusted for `OpenFOAM-v2212`. Other versions should be possible as well; some minor adjustments of the so called `functionObjects` are probably needed (this is not tested in detail).
 
