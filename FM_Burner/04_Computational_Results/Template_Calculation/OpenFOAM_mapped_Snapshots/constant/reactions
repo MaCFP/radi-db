@@ -1,0 +1,18 @@
+species
+(
+    O2
+    H2O
+    C2H4
+    CO2
+    N2
+    CO
+);
+
+reactions
+{
+    methaneReaction
+    {
+        type         irreversibleinfiniteReaction;
+        reaction "C2H4 + 3O2 + 11.286N2 = 2CO2 + 2H2O + 11.286N2";
+    }
+}

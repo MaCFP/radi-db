@@ -1,0 +1,70 @@
+/*--------------------------------*- C++ -*----------------------------------*    | =========                 |                                                 |
+  | \      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+  |  \    /   O peration     | Version:  v2006                                 |
+  |   \  /    A nd           | Website:  www.openfoam.com                      |
+  |    \/     M anipulation  |                                                 |
+  \*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     simpleFoam;
+
+startTime 0;
+
+startFrom       latestTime;
+
+endTime         endTime_Val;
+
+stopAt          endTime;
+// stopAt          writeNow;
+
+deltaT          0.0000001;
+
+writeControl    timeStep;
+
+writeInterval   1;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  12;
+
+writeCompression on;
+
+timeFormat      general;
+
+timePrecision   12;
+
+runTimeModifiable true;
+
+//================================================================================
+radFields_DO (a G);
+initFields_DO (C2H4 CO CO2 H2O N2 O2 soot T rho);
+radFields_WW (qin qr qem);
+
+//--------------------------------------------------------------------------------
+functions
+{
+    writeObjects1.writeObjects
+    {
+        type        writeObjects;
+        libs        (utilityFunctionObjects);
+        objects     (a soot qem);
+        timeStart       0.0;
+        timeEnd         166;
+        executeControl  timeStep;
+        executeInterval 2;
+        writeControl    timeStep;
+        writeInterval   2;
+    }
+
+#include "postDict"
+}
