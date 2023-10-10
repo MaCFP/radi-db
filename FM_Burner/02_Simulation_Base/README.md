@@ -82,32 +82,28 @@ snapshots
 
 ### Snapshots - Flame Temperature
 
-![Temperature at positon $r=\SI{0}{\m}$ and
-$z=3.5 \cdot D$](img/Plots/Selection_Temp_Snapshots.vsz.png)
+![Temperature at positon $r=\SI{0}{\m}$ and $z=3.5 \cdot D$](img/Plots/Selection_Temp_Snapshots.vsz.png)
 
 -   The selected snapshots demonstrate a good distribution for this
     monitor point.
 
 ### Plots - Flame Soot
 
-![Soot volume fraction at positon $r=\SI{0}{\m}$ and
-$z=1.0 \cdot D$](img/Plots/Selection_Soot_ts.vsz.png)
+![Soot volume fraction at positon $r=0m$ and $z=1.0 \cdot D$](img/Plots/Selection_Soot_ts.vsz.png)
 
 -   The selected snapshots demonstrate a good distribution for this
     monitor point.
 
 ### Plots - Wall/Center - Radiative Heat Flux
 
-![Radiative heat flux positon $x=\SI{0.6}{\m}$ and
-$z=\SI{0.5}{\m} $](img/Plots/Selectioin_RADFL_center_155.vsz.png)
+![Radiative heat flux positon $x=0.6m$ and $z=0.5m $](img/Plots/Selectioin_RADFL_center_155.vsz.png)
 
 -   The selected snapshots demonstrate a (good) distribution for this
     monitor point.
 
 ### Plots - Wall/Middle - Radiative Heat Flux
 
-![Radiative heat flux positon $x=\SI{0.6}{\m}$ and
-$z=\SI{0.1}{\m} $](img/Plots/Selection_radradfl_middle_x06y0z01.vsz.png)
+![Radiative heat flux positon $x=0.6m$ and $z=0.1m$](img/Plots/Selection_radradfl_middle_x06y0z01.vsz.png)
 
 -   The selected snapshots **do not include extreme values** for
     radiative heat flux at this point.
