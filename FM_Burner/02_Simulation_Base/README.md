@@ -1,3 +1,24 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Overview](#overview)
+    - [`FDS`: ](#fds)
+- [Description of Base Data](#description-of-base-data)
+    - [Simulation setup ](#simulation-setup)
+    - [Mapping Procedure ](#mapping-procedure)
+    - [Results - Comparison with Data](#results---comparison-with-data)
+    - [Selection of snapshots](#selection-of-snapshots)
+        - [General](#general)
+        - [Selection of Snapshots](#selection-of-snapshots)
+        - [Snapshots - Flame Temperature](#snapshots---flame-temperature)
+        - [Plots - Flame Soot](#plots---flame-soot)
+        - [Plots - Wall/Center - Radiative Heat Flux](#plots---wallcenter---radiative-heat-flux)
+        - [Plots - Wall/Middle - Radiative Heat Flux](#plots---wallmiddle---radiative-heat-flux)
+- [Further information](#further-information)
+    - [-](#-)
+
+<!-- markdown-toc end -->
+
 # Overview
 Initial and mapped setups are listed in this directory.
 
@@ -9,54 +30,91 @@ Initial and mapped setups are listed in this directory.
 Here only the setup is very shortly described; no calculation files are available.
 
 
-## `FDS_mapped_Snapshots`:
-- `CSVF` files approach for calculating the snapshots with FDS
-
-The general steps are described already in the [Readme](/FM_Burner/README.md) ; please check there again for the details and a step by step description.
+# Description of Base Data
 
 
-## `OPF_Mapped_Snapshots`
-  - all the mapped field files are available in a release with compressed openfoam files; please click here to download the relevant time steps.
-  - Link to data files for the release with each snapshot:
-  
-  https://github.com/MaCFP/radi-db/releases/tag/FM_SimBase_v0.0.1
+## Simulation setup 
+FDS-version XXX
 
-Please use the scripts in the current `OpenFOAM_mapped_Snapshots` folder for downloading all files automatically.
+General settings XXX
 
-```00_download_files.sh```
 
-The general steps are described already in the [Readme](/FM_Burner/README.md) ; please check there again for the details and a step by step description.
+## Mapping Procedure 
+As stated, the initial simulation was done with FDS. To get these
+simulation data to OpenFOAM and also into a CSVF readable FDS format
+some post-processing steps were needed.  This was mainly done with the
+`fireANALYSIS` tool which basically converts FDS to other common data
+formats. In this case, the relevant format is CSV. There are slight
+differences between the raw csv formats for the mapping to OpenFOAM
+and back to FDS-CSVF.
 
+The csv data is imported to OpenFOAM with a specially adjusted
+pre-processing tool. The mesh itself is prepared before with exactly
+the same cell distribution as the underlining FDS mesh.
+
+
+
+## Selection of snapshots
+### General
+
+Ideally, the selection of the snapshots should be done by preserving
+different moments (e.g. mean,...) compared to original data set.
+
+-   This will potentially lead to many snapshots
+
+Here, we agreed to select about 40 snapshots for the evaluation with
+LBL-PMC method
+
+-   The selection is done by selecting a time difference of $\SI{5}{\s}
+     $ between each snapshots
+-   So the selection is kind of predefined before the simulation
+-   A selection based on `extreme snapshots` to include the complete
+    range of outcome would only be possible when writing out each time
+    step (which is seen as an option for the moment)
+
+### Selection of Snapshots
+
+The next slides give some information about the actually selected
+snapshots
+
+-   **Only** a few monitor positions were investigated, so the following
+    slides give just a reduced overview about the selected snapshots
+
+### Snapshots - Flame Temperature
+
+![Temperature at positon $r=\SI{0}{\m}$ and
+$z=3.5 \cdot D$](img/Plots/Selection_Temp_Snapshots.vsz.png)
+
+-   The selected snapshots demonstrate a good distribution for this
+    monitor point.
+
+### Plots - Flame Soot
+
+![Soot volume fraction at positon $r=\SI{0}{\m}$ and
+$z=1.0 \cdot D$](img/Plots/Selection_Soot_ts.vsz.png)
+
+-   The selected snapshots demonstrate a good distribution for this
+    monitor point.
+
+### Plots - Wall/Center - Radiative Heat Flux
+
+![Radiative heat flux positon $x=\SI{0.6}{\m}$ and
+$z=\SI{0.5}{\m} $](img/Plots/Selectioin_RADFL_center_155.vsz.png)
+
+-   The selected snapshots demonstrate a (good) distribution for this
+    monitor point.
+
+### Plots - Wall/Middle - Radiative Heat Flux
+
+![Radiative heat flux positon $x=\SI{0.6}{\m}$ and
+$z=\SI{0.1}{\m} $](img/Plots/Selection_radradfl_middle_x06y0z01.vsz.png)
+
+-   The selected snapshots **do not include extreme values** for
+    radiative heat flux at this point.
 
 
 
 # Further information
-## Naming conventions for fields
-
-### Field Names
-
-| Field           | Type                     | Field name for OPF |
-|-----------------|--------------------------|--------------------|
-| Nitrogen        | Mass fraction            | N2                 |
-| Oxygen          | Mass fraction            | O2                 |
-| Carbon dioxide  | Mass fraction            | CO2                |
-| Carbon monoxide | Mass fraction            | CO                 |
-| Ethylene        | Mass fraction            | C2H4               |
-| Water Vapor     | Mass fraction            | H2O                |
-| Soot            | Mass fraction            | Soot               |
-| Nitrogen        | Volume fraction          | N2_vol             |
-| Oxygen          | Volume fraction          | O2_vol             |
-| Carbon dioxide  | Volume fraction          | CO2_vol            |
-| Carbon monoxide | Volume fraction          | CO_vol             |
-| Ethylene        | Volume fraction          | C2H4_vol           |
-| Water Vapor     | Volume fraction          | H2O_vol            |
-| Soot            | Volume fraction          | Soot_vol           |
-| Soot            | Aerosol Volume fraction  | fvSoot             |
-| Density         | (warning: dimensionless) | rho                |
-| Temperature     | (Kelvin)                 |                    |
-
-Comment: Pressure is not available in this list as it has minor impact
-on the final results (this was checked for time step 15).
 
 ### Molar weights from FDS
 

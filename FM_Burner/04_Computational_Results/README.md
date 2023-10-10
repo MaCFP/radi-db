@@ -1,4 +1,6 @@
 
+# OLD - remove or move info to other readme
+
 # Information for Benchmarking
 ## General
 
