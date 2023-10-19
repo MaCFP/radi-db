@@ -1,0 +1,17 @@
+species
+(
+    O2
+    H2O
+    CH3OH_Metanol
+    CO2
+    N2
+);
+
+reactions
+{
+    MethanolReaction
+    {
+        type irreversibleinfiniteReaction;
+        reaction "CH3OH_Metanol + 1.5O2 + 5.64N2 = CO2 + 2H2O + 5.64N2";
+    }
+}
