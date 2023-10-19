@@ -6,7 +6,6 @@
 - [Description of Base Data](#description-of-base-data)
     - [Simulation setup ](#simulation-setup)
     - [Mapping Procedure ](#mapping-procedure)
-    - [Results - Comparison with Data](#results---comparison-with-data)
     - [Selection of snapshots](#selection-of-snapshots)
         - [General](#general)
         - [Selection of Snapshots](#selection-of-snapshots)

@@ -2,8 +2,12 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
+- [Overview Folder Structure](#overview-folder-structure)
+    - [`FDS_mapped_Snapshots`:](#fds_mapped_snapshots)
+    - [`OPF_Mapped_Snapshots`](#opf_mapped_snapshots)
 - [Description for validating FDS and OpenFOAM with the PMC-LBL solution](#description-for-validating-fds-and-openfoam-with-the-pmc-lbl-solution)
     - [Step by Step description to compare a `FDS` simulation](#step-by-step-description-to-compare-a-fds-simulation)
+        - [Important](#important)
         - [1. Got to folder](#1-got-to-folder)
         - [2. Download Snapshots from Github releases](#2-download-snapshots-from-github-releases)
         - [3. Creating Case directories by extracting the tar files for each snapshot](#3-creating-case-directories-by-extracting-the-tar-files-for-each-snapshot)
@@ -12,6 +16,7 @@
         - [6. Post-Processing of all Snapshots ](#6-post-processing-of-all-snapshots)
         - [7. Compare with `PMC-LBL`](#7-compare-with-pmc-lbl)
     - [Step by Step description to compare an `OpenFOAM` simulation](#step-by-step-description-to-compare-an-openfoam-simulation)
+        - [-](#-)
         - [1. Got to folder](#1-got-to-folder-1)
         - [2. Download Snapshots from Github releases](#2-download-snapshots-from-github-releases-1)
         - [3. Creating Case directories for each time step   ](#3-creating-case-directories-for-each-time-step)
@@ -58,6 +63,12 @@ It is assumed that a basic understanding about the FDS and OpenFOAM setup is alr
 These two description do not yet described how to compare the final results. This is done within the [04_Computational_Results](/FM_Burner/04_Computational_Results) folder. There the actual comparison of the results is done; this is very similar to the gas phase group.
 
 ## Step by Step description to compare a `FDS` simulation
+
+### Important
+
+As stated before, the calculations with `FDS` need an installation of at least this version 
+ `FDS-6.8.0-138-g51097e3-nightly`.
+ 
 
 
 ### 1. Got to folder
@@ -170,6 +181,8 @@ These two description do not yet described how to compare the final results. Thi
    details for the process is described in the relevant folder.
 ## Step by Step description to compare an `OpenFOAM` simulation
 
+#### Important
+ Similar for `OpenFOAM`, the approach is adjusted for `OpenFOAM-v2212`. Other versions should be possible as well; some minor adjustments of the so called `functionObjects` are probably needed (this is not tested in detail).
 
 ### 1. Got to folder
    `/02_Simulation_Base/OpenFOAM_mapped_Snapshots`
