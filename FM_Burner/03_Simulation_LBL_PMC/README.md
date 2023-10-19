@@ -12,9 +12,9 @@ Or use the download script `00_download_files.sh` to get all files automatically
 
 Further description is given in the [Readme](/FM_Burner/README.md).
 
-# Further information
+## Further information
 
-## OpenFOAM
+### OpenFOAM
 
-### Needed Version
+#### Needed Version
 As stated in the [Readme](/FM_Burner/README.md) the setup is prepared and tested for `OpenFOAM` version `v2212`.

@@ -1,4 +1,3 @@
-
 # General Information
 
 General overview about the folder structure is described in the main `README.md` file.
