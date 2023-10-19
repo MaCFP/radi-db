@@ -1,23 +1,6 @@
-
 # General Information
+This folder includes scripts and some information about for the NIST Pool fire case.
 
-# Scripts, Tools and Templates
-
-
-## FDS
-Template files:
-
-| Case      | Name of template file |
-|-----------|-----------------------|
-| FM Burner | vFDS_FM_Burner.fds    |
-| NIST Pool | vFDS_NIST_Pool.fds    |
+Further information will be provided...
 
 
-## OpenFOAM
-### fireRadFoam 
-
-`fireRadFoam` is an adjusted fireFoam solver, which is based on
-standard `fireFoam` (ESI v2212) and runs only the radiation part.
-
-
-## Python
