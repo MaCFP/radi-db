@@ -185,9 +185,9 @@ As stated before, the calculations with `FDS` need an installation of at least t
  Similar for `OpenFOAM`, the approach is adjusted for `OpenFOAM-v2212`. Other versions should be possible as well; some minor adjustments of the so called `functionObjects` are probably needed (this is not tested in detail).
 
 ### 1. Got to folder
-   `/02_Simulation_Base/OpenFOAM_mapped_Snapshots`
+   `./OpenFOAM_mapped_Snapshots`
    
-   This is the link to the [folder](/FM_Burner/02_Simulation_Base/OpenFOAM_mapped_Snapshots).
+   This is the link to the [folder](OpenFOAM_mapped_Snapshots).
 
    There you find scripts and some folders.  
    
