@@ -2,7 +2,6 @@
 radFields_DO (a G);
 miscFields_DO (CO2 H2O soot T rho);
 radFields_WW (qin qr qem);
-// miscFields_DO (C2H4 CO CO2 H2O N2 O2 soot T rho);
 
 //================================================================================
     nr7__radFields_IN_FIRE_h_x_n006_006_y0_z_0__cellPoint.sets
@@ -64,44 +63,6 @@ radFields_WW (qin qr qem);
         fields $radFields_WW;
     }
 
-    // radFields_OUT_h_z2__x_n06_06_y0_z_83__cellPoint.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cellPoint;
-    //     writeInterval  2;
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.83);
-    //             end (0.6 0 0.83);
-    //             nPoints 240;
-    //         } );
-    //     fields $radFields_WW;
-    // }
-    // radFields_IN_h_z1__x_n06_06_y0_z_n37__cellPoint.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cellPoint;
-    //     writeInterval  2;
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 -0.37);
-    //             end (0.6 0 -0.37);
-    //             nPoints 240;
-    //         } );
-    //     fields $radFields_WW;
-    // }
 
     nr4__radFields_WW_h_x2__x06_y_n06_06_z_3__cellPoint.sets
     {
@@ -165,28 +126,7 @@ radFields_WW (qin qr qem);
             } );
         fields $radFields_DO;
     }
-    // radFields_DO_h_x_n06_06_y_0_z_2286_15D__cell.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cell;
 
-    //     writeInterval  2;
-
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.2286);
-    //             end (0.6 0 0.2286);
-    //             nPoints 240;
-    //         } );
-    //     // fields $radFields_DO;
-    //     fields $radFields_DO;
-    // }
     nr2__radFields_DO_h_x_n06_06_y_0_z_3048_2D__cell.sets
     {
         type sets;
@@ -208,70 +148,6 @@ radFields_WW (qin qr qem);
             } );
         fields $radFields_DO;
     }
-    // radFields_DO_h_x_n06_06_y_0_z_3810_25D__cell.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cell;
-
-    //     writeInterval  2;
-
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.381);
-    //             end (0.6 0 0.381);
-    //             nPoints 240;
-    //         } );
-    //     fields $radFields_DO;
-    // }
-
-    // radFields_DO_h_x_n06_06_y_0_z_4572_3D__cell.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cell;
-
-    //     writeInterval  2;
-
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.4572);
-    //             end (0.6 0 0.4572);
-    //             nPoints 240;
-    //         } );
-    //     fields $radFields_DO;
-    // }
-    // radFields_DO_h_x_n06_06_y_0_z_5334_35D__cell.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cell;
-
-    //     writeInterval  2;
-
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.5334);
-    //             end (0.6 0 0.5334);
-    //             nPoints 240;
-    //         } );
-    //     fields $radFields_DO;
-    // }
 
     nr3__miscFields_DO_v_x0_y_0_z_0_83___cell.sets
     {
@@ -315,27 +191,7 @@ radFields_WW (qin qr qem);
             } );
         fields $miscFields_DO;
     }
-    // miscFields_DO_h_x_n06_06_y_0_z_2286_15D___cell.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cell;
 
-    //     writeInterval  2;
-
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.2286);
-    //             end (0.6 0 0.2286);
-    //             nPoints 240;
-    //         } );
-    //     fields $miscFields_DO;
-    // }
     nr2__miscFields_DO_h_x_n06_06_y_0_z_3048_2D___cell.sets
     {
         type sets;
@@ -357,67 +213,3 @@ radFields_WW (qin qr qem);
             } );
         fields $miscFields_DO;
     }
-    // miscFields_DO_h_x_n06_06_y_0_z_3810_25D___cell.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cell;
-
-    //     writeInterval  2;
-
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.381);
-    //             end (0.6 0 0.381);
-    //             nPoints 240;
-    //         } );
-    //     fields $miscFields_DO;
-    // }
-
-    // miscFields_DO_h_x_n06_06_y_0_z_4572_3D___cell.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cell;
-
-    //     writeInterval  2;
-
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.4572);
-    //             end (0.6 0 0.4572);
-    //             nPoints 240;
-    //         } );
-    //     fields $miscFields_DO;
-    // }
-    // miscFields_DO_h_x_n06_06_y_0_z_5334_35D___cell.sets
-    // {
-    //     type sets;
-    //     libs (sampling);
-    //     writeControl timeStep;
-    //     interpolationScheme cell;
-
-    //     writeInterval  2;
-
-    //     setFormat   csv;
-    //     sets (
-    //         data
-    //         {
-    //             type uniform;
-    //             axis x;
-    //             start (-0.6 0 0.5334);
-    //             end (0.6 0 0.5334);
-    //             nPoints 240;
-    //         } );
-    //     fields $miscFields_DO;
-    // }
