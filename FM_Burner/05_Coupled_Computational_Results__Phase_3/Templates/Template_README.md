@@ -3,7 +3,7 @@
 Name: 
 
 Institution: 
-Short-Institution-Name: 
+Short-Institution-Name (Iname): 
 
 Country: 
 
@@ -16,11 +16,11 @@ FM-burner: ethylene flame
 ------------------
 
 ### CFD package
-Code: OpenFOAM
+Code: 
 
-Solver: FireFOAM
+Solver: 
 
-Version: v2006
+Version: 
 
 ------------------
 
@@ -48,11 +48,11 @@ Comments:
 
 ### Initial conditions
 
-Temperature: X K
+Temperature (K): 
 
-Pressure: 101325 Pa
+Pressure (Pa): 101325 
 
-Velocity: 0 m/s
+Velocity (m/s): 
 
 Comments:
 - 
@@ -96,7 +96,7 @@ Path length (m):
 - 0.1
 
 Radiation temperature (K):
-- 300
+- 800
 
 Turbulence-Radiation-Interaction (TRI): 
 - none
@@ -125,50 +125,49 @@ Comments:
 
 ------------------
 
-### Discretization methods
+### Discretization methods and schemes
 Time: Backward
 
 CFL: maximum 0.7
 
 Advection: 
 
-Momentum: Gauss linear
+Momentum: 
 
-scalars: Gauss limitedLinear 0.1
+scalars: 
 
-Diffusion:  Gaussian scheme (Gauss linear corrected)
+Diffusion:  
 
 Pressure-velocity coupling
 
-PIMPLE:
+- PIMPLE:
 
-inner correction iterations: 2
+- Inner correction iterations: 
 
-non-orthogonal correction iterations: 1
+- Non-orthogonal correction iterations: 
 
-outer iterations: 3
+- outer iterations: 
 
 ------------------
 
 ### Computational Cost (hh:mm:ss)
 
-Wall clock time:
+Wall clock time (h):
 
-coarse:8 h
+- coarse:
 
-medium: 60 h
+- medium: 
 
-fine: 150 h
+- fine: 
 
 
+Simulation time (s):
 
-Simulation time:
-
-For all grids: 0-30s
+- For all grids: 0-30s
 
 Number of CPUs (MPI Processes):
 
-40 CPUs for all grids
+- 40 CPUs for all grids
 
 CPU cost (Number of CPUs * Wall clock time / Simulation time / Total cells):
 
